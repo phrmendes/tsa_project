@@ -1,0 +1,48 @@
+---
+format: 
+  pdf:
+    colorlinks: true
+    fig-pos: "h"
+    documentclass: scrartcl
+    geometry:
+      - top=2.5cm
+      - bottom=2.5cm
+      - left=2.5cm
+      - right=2.5cm
+    include-in-header:
+      - header.tex
+title: \Large Title
+author: 
+  - name: "Pedro Henrique Rocha Mendes ^[RA: 11201811516]"
+  - name: "Caio Forcione ^[RA: 1234]"
+abstract: |
+  \singlespacing
+  \zeroIndent
+  
+  \nid Abstract  
+  \vspace{0.5cm}
+  
+  **Keywords**: Lorem, Ipsum.
+fontsize: 12pt
+bibliography: references.bib
+reference-section-title: References
+csl: apa.csl
+nocite: null
+lang: pt-BR
+link-citations: yes
+cap-location: top
+---
+
+```{=tex}
+\oneHalfIndent
+```
+
+# Introduction
+
+# Main body
+
+# Conclusion
+
+```{=tex}
+\referenceStyle
+```
