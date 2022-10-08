@@ -14,7 +14,7 @@ format:
 title: \Large Title
 author: 
   - name: "Pedro Henrique Rocha Mendes ^[RA: 11201811516]"
-  - name: "Caio Forcione ^[RA: 1234]"
+  - name: "Caio de Andrade Forcionee ^[RA: 21202210181]"
 abstract: |
   \singlespacing
   \zeroIndent
