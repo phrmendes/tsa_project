@@ -5,8 +5,17 @@
 if (!require("pacman")) install.packages("pacman")
 
 pacman::p_load(
-    tidyverse,
-    basedosdados,
-    arrow,
-    janitor
+  languageserver,
+  httpgd,
+  tidyverse,
+  arrow,
+  janitor,
+  curl,
+  zip,
+  fs,
+  glue,
+  lintr,
+  styler,
+  rjson,
+  formatR
 )
