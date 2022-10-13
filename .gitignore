@@ -1,1 +1,4 @@
 .Rproj.user
+data/*.parquet
+data/aux_files/*.json
+.Rprofile
