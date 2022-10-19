@@ -4,6 +4,8 @@
 
 if (!require("pacman")) install.packages("pacman")
 
+options(repos = c(REPO_NAME = "https://packagemanager.rstudio.com/all/latest"))
+
 pacman::p_load(
   languageserver,
   httpgd,
@@ -17,5 +19,7 @@ pacman::p_load(
   lintr,
   styler,
   rjson,
-  formatR
+  formatR,
+  yaml,
+  quarto
 )
