@@ -1,4 +1,6 @@
-# ----------------- #
+:w
+
+:w
 # --- FUNCTIONS --- #
 # ----------------- #
 
@@ -241,7 +243,6 @@ pof_json <- function(args = NULL) {
 # download pof data in .parquet files ----
 
 pof_download <- function(args = NULL) {
-  pof_json()
 
   data_url <- "https://ftp.ibge.gov.br/Orcamentos_Familiares/Pesquisa_de_Orcamentos_Familiares_2017_2018/Microdados/Dados_20210304.zip" # nolint
 
@@ -249,7 +250,11 @@ pof_download <- function(args = NULL) {
 
   tmp_file <- tempfile()
 
-  pof_parameters <- rjson::fromJSON(file = "data/aux_files/pof.json")
+  pof_json <- "data/aux_files/pof.json"
+
+  if (!fs::file_exists(pof_json)) pof_json()
+
+  pof_parameters <- rjson::fromJSON(file = pof_json)
 
   curl::curl_download(
     url = data_url,
