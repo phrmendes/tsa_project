@@ -232,7 +232,7 @@ pof_json <- function(args = NULL) {
       )
     )
 
-    pof_json <- rjson::toJSON(pof_list)
+    pof_json <- rjson::toJSON(pof_list, pretty = TRUE)
 
     write(x = pof_json, file = "data/aux_files/pof.json")
   }
