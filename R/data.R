@@ -4,7 +4,7 @@
 
 # working directory ----
 
-setwd(system("git rev-parse --show-toplevel", intern = T))
+setwd(system("git rev-parse --show-toplevel", intern = TRUE))
 
 # libraries and functions ----
 
