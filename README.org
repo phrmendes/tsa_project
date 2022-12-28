@@ -1,0 +1,58 @@
+* 📈 TSA Project
+
+Article for the "Time Series Analysis" course at the Federal University of ABC.
+
+** flake.nix
+
+#+begin_src nix :tangle ./flake.nix
+{
+  description = "Time Series Analysis Project";
+  inputs = {
+    stable.url = "github:NixOS/nixpkgs/nixos-22.11";
+    unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+  };
+  outputs = inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = inputs.unstable.legacyPackages.${system};
+      renv = pkgs.rWrapper.override {
+        packages = with pkgs.rPackages; [
+          tidyverse
+          zip
+          fs
+          forecast
+          lmtest
+        ];
+      };
+    in {
+      devShell."${system}" = pkgs.mkShell {
+        buildInputs = with pkgs; [
+          coreutils
+          git
+          glibcLocales
+          which
+          curl
+          pandoc
+          renv
+        ];
+        shellHook = ''
+          mkdir -p "$(pwd)/_libs"
+          export R_LIBS_USER="$(pwd)/_libs"
+        '';
+      };
+    };
+}
+#+end_src
+
+** Resources
+
+Project management:
+
++ ~direnv~: A shell extension that manages your environment.
+  + Link: https://direnv.net/
+  + Installation: ~nix-env -iA nixpkgs.direnv~
++ ~flakes~: Flakes allow you to specify your code's dependencies in a declarative way, simply by listing them inside a flake.nix file.
+  + Link: https://nixos.wiki/wiki/Flakes
++ How to create an development environment: [[https://www.youtube.com/watch?v=irPTtmP4xuM][Better than virtualenv | direnv + nix-shell + lorri + flakes - Andrew Topin]]
+
+** Abstract
