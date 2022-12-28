@@ -48,11 +48,13 @@ Article for the "Time Series Analysis" course at the Federal University of ABC.
 
 Project management:
 
-+ ~direnv~: A shell extension that manages your environment.
++ ~direnv~: A shell extension that manages your environment
   + Link: https://direnv.net/
   + Installation: ~nix-env -iA nixpkgs.direnv~
-+ ~flakes~: Flakes allow you to specify your code's dependencies in a declarative way, simply by listing them inside a flake.nix file.
++ ~flakes~: Flakes allow you to specify your code's dependencies in a declarative way, simply by listing them inside a flake.nix file
   + Link: https://nixos.wiki/wiki/Flakes
 + How to create an development environment: [[https://www.youtube.com/watch?v=irPTtmP4xuM][Better than virtualenv | direnv + nix-shell + lorri + flakes - Andrew Topin]]
+
+Init development environment: ~nix develop~
 
 ** Abstract
