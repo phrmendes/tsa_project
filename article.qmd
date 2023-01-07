@@ -14,7 +14,6 @@ format:
 title: \Large Title
 author: 
   - name: "Pedro Henrique Rocha Mendes ^[RA: 11201811516]"
-  - name: "Caio de Andrade Forcionee ^[RA: 21202210181]"
 abstract: |
   \singlespacing
   \zeroIndent
@@ -27,7 +26,7 @@ fontsize: 12pt
 bibliography: references.bib
 reference-section-title: References
 csl: apa.csl
-nocite: null
+nocite: '@*'
 lang: pt-BR
 link-citations: yes
 cap-location: top

@@ -11,27 +11,32 @@
       renv = pkgs.rWrapper.override {
         packages = with pkgs.rPackages; [
           tidyverse
-          zip
+          janitor
           fs
+          glue
+          vroom
+          quarto
           forecast
           lmtest
+          urca
+          vars
+          ipeadatar
+          deflateBR
         ];
       };
     in {
       devShell."${system}" = pkgs.mkShell {
         buildInputs = with pkgs; [
+          bashInteractive
           coreutils
           git
-          glibcLocales
           which
           curl
           pandoc
+          quarto
           renv
+          direnv
         ];
-        shellHook = ''
-          mkdir -p "$(pwd)/_libs"
-          export R_LIBS_USER="$(pwd)/_libs"
-        '';
       };
     };
 }
