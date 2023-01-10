@@ -10,16 +10,17 @@
       pkgs = inputs.unstable.legacyPackages.${system};
       renv = pkgs.rWrapper.override {
         packages = with pkgs.rPackages; [
-          tidyverse
+          dplyr
+          tidyr
+          purrr
+          ggplot2
+          lubridate
           janitor
           fs
           glue
-          vroom
           quarto
-          forecast
-          lmtest
-          urca
           vars
+          stargazer
           ipeadatar
           deflateBR
         ];
